@@ -52,15 +52,16 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   position: relative;
-  padding: 6px 0;
+  padding: 8px 0;
   transition: all 0.25s ease;
 }
 
+/* underline effect */
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -6px;
   width: 0%;
   height: 2px;
   background: #7dd3fc;
@@ -71,9 +72,10 @@ body {
   width: 100%;
 }
 
+/* glow */
 .nav-links a:hover {
   color: #7dd3fc;
-  text-shadow: 0 0 8px rgba(125, 211, 252, 0.6);
+  text-shadow: 0 0 10px rgba(125, 211, 252, 0.7);
 }
 
 /* spacing so content isn't hidden behind fixed nav */
