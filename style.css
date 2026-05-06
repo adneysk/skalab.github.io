@@ -73,9 +73,6 @@ body {
 }
 
 /* spacing so content isn't hidden behind fixed nav */
-.hero {
-  padding-top: 100px;
-}
 
 /* INFO SECTIONS */
 .info-section {
@@ -99,7 +96,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8vw;
+  padding: 120px 8vw 8vw;
   background:
     linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)),
     radial-gradient(circle at top left, #243b55, #050505 60%);
