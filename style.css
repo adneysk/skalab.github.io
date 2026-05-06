@@ -13,6 +13,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* remove default link styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* NAVBAR */
 .navbar {
   position: fixed;
@@ -21,6 +27,7 @@ body {
   background: rgba(5, 5, 5, 0.85);
   backdrop-filter: blur(10px);
   z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .nav-container {
@@ -31,9 +38,11 @@ body {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7dd3fc;
 }
 
 .nav-links {
@@ -45,23 +54,22 @@ body {
 }
 
 .nav-links a {
-  text-decoration: none;
   color: #e5e5e5;
   font-size: 1.2rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-weight: 500;
   position: relative;
-  padding: 8px 0;
+  padding: 6px 0;
   transition: all 0.25s ease;
 }
 
-/* underline effect */
+/* animated underline */
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -4px;
   width: 0%;
   height: 2px;
   background: #7dd3fc;
@@ -75,49 +83,78 @@ body {
 /* glow */
 .nav-links a:hover {
   color: #7dd3fc;
-  text-shadow: 0 0 10px rgba(125, 211, 252, 0.7);
+  text-shadow: 0 0 8px rgba(125, 211, 252, 0.6);
 }
 
-/* spacing so content isn't hidden behind fixed nav */
-
-/* INFO SECTIONS */
-.info-section {
-  min-height: 60vh;
-  padding: 120px 8vw 80px;
-  background: #0a0a0a;
-}
-
-.info-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.info-section p {
-  max-width: 700px;
-  color: #bbb;
-}
-
+/* HERO (two-column layout) */
 .hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   padding: 120px 8vw 8vw;
   background:
     linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)),
     radial-gradient(circle at top left, #243b55, #050505 60%);
 }
 
-.hero h1 {
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 60px;
+}
+
+/* LEFT SIDE */
+.hero-left h1 {
   font-size: clamp(3rem, 9vw, 8rem);
   margin: 0;
 }
 
-.hero p {
+.hero-left p {
   font-size: 1.4rem;
   color: #cfcfcf;
+  max-width: 500px;
 }
 
+/* RIGHT SIDE (PROJECT LIST) */
+.hero-right {
+  max-width: 400px;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-list li {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 16px;
+  transition: 0.2s;
+}
+
+.project-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: #7dd3fc;
+  border-radius: 50%;
+}
+
+.project-list li:hover {
+  color: #7dd3fc;
+  transform: translateX(4px);
+}
+
+/* GALLERY */
 .gallery {
   width: 100%;
 }
@@ -139,6 +176,7 @@ body {
   opacity: 0.82;
 }
 
+/* CAPTIONS */
 .caption {
   position: absolute;
   left: 6vw;
@@ -160,6 +198,27 @@ body {
   color: #ddd;
 }
 
+/* INFO SECTIONS */
+.info-section {
+  min-height: 70vh;
+  padding: 140px 8vw 100px;
+  background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  scroll-margin-top: 100px;
+}
+
+.info-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.info-section p {
+  max-width: 700px;
+  color: #bbb;
+}
+
+/* FOOTER */
 footer {
   padding: 40px;
   text-align: center;
